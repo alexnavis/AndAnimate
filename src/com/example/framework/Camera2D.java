@@ -24,10 +24,10 @@ public class Camera2D {
         gl.glViewport(0, 0, glGraphics.getWidth(), glGraphics.getHeight());
         gl.glMatrixMode(GL10.GL_PROJECTION);
         gl.glLoadIdentity();
-        gl.glOrthof(position.x - frustumWidth * zoom / 2, 
-                    position.x + frustumWidth * zoom/ 2, 
-                    position.y - frustumHeight * zoom / 2, 
-                    position.y + frustumHeight * zoom/ 2, 
+        gl.glOrthof(position.x - frustumWidth * zoom / 2,
+                    position.x + frustumWidth * zoom/ 2,
+                    position.y - frustumHeight * zoom / 2,
+                    position.y + frustumHeight * zoom/ 2,
                     1, -1);
         gl.glMatrixMode(GL10.GL_MODELVIEW);
         gl.glLoadIdentity();

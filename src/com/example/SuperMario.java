@@ -17,8 +17,7 @@ class SuperMario extends GameObject {
         velocity = new Vector2();
         accel = new Vector2();
 
-        this.position.set((float) Math.random() * WORLD_WIDTH,
-                (float) Math.random() * WORLD_HEIGHT);
+        this.position.set(WORLD_WIDTH/2, WORLD_HEIGHT/2);
         this.velocity.set(Math.random() > 0.5f ? -0.5f : 0.5f, 0);
         this.walkingTime = (float) Math.random() * 10;
     }

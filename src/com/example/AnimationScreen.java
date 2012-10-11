@@ -20,28 +20,24 @@ public class AnimationScreen extends Screen {
 
     public AnimationScreen(Game game) {
         super(game);
-        glGraphics = ((AnimationExampleActivity) game).getGLGraphics();
-        superMario = new SuperMario((float) Math.random(), (float) Math.random(), 1, 1);
+        glGraphics = ((MarioActivity) game).getGLGraphics();
+        superMario = new SuperMario(WORLD_HEIGHT/2, WORLD_WIDTH/2, 1, 1);
         batcher = new SpriteBatcher(glGraphics);
         camera = new Camera2D(glGraphics, WORLD_WIDTH, WORLD_HEIGHT);
     }
 
     @Override
     public void resume() {
-        texture = new Texture(((AnimationExampleActivity) game), "Mario-walk.png");
-        walkAnim = new Animation(0.3f,
-                new TextureRegion(texture, 0, 0, 19.75f, 35),
-                new TextureRegion(texture, 19.75f, 0, 19.75f, 35),
-                new TextureRegion(texture, 39.5f, 0, 19.75f, 35),
-                new TextureRegion(texture, 59.25f, 0, 19.75f, 35),
-                new TextureRegion(texture, 79, 0, 19.75f, 35),
-                new TextureRegion(texture, 98.75f, 0, 19.75f, 35),
-                new TextureRegion(texture, 118.5f, 0, 19.75f, 35),
-                new TextureRegion(texture, 138.25f, 0, 19.75f, 35));
-//                new TextureRegion(texture, 0, 0, 64, 64),
-//                new TextureRegion(texture, 64, 0, 64, 64),
-//                new TextureRegion(texture, 128, 0, 64, 64),
-//                new TextureRegion(texture, 192, 0, 64, 64));
+        texture = new Texture(((MarioActivity) game), "Mario-walk.png");
+        walkAnim = new Animation(0.19f,
+                new TextureRegion(texture, 0,        0, 19.75f, 35),
+                new TextureRegion(texture, 19.75f,   0, 19.75f, 35),
+                new TextureRegion(texture, 39.5f,    0, 19.75f, 35),
+                new TextureRegion(texture, 59.25f,   0, 19.75f, 35),
+                new TextureRegion(texture, 79,       0, 19.75f, 35),
+                new TextureRegion(texture, 98.75f,   0, 19.75f, 35),
+                new TextureRegion(texture, 118.5f,   0, 19.75f, 35),
+                new TextureRegion(texture, 138.25f,  0, 19.75f, 35));
     }
 
     @Override

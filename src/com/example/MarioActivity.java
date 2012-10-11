@@ -12,7 +12,7 @@ import com.example.framework.*;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class AnimationExampleActivity extends Activity implements Game, GLSurfaceView.Renderer {
+public class MarioActivity extends Activity implements Game, GLSurfaceView.Renderer {
 
     GLGameState state = GLGameState.Initialized;
     private long startTime = System.nanoTime();
@@ -47,7 +47,7 @@ public class AnimationExampleActivity extends Activity implements Game, GLSurfac
         fileIO = new AndroidFileIO(getAssets());
         input = new AndroidInput(this, glView, 1, 1);
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "AnimationExampleActivity");
+        wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "MarioActivity");
         glView.setBackgroundColor(65536);
     }
 

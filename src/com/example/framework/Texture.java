@@ -3,7 +3,7 @@ package com.example.framework;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLUtils;
-import com.example.AnimationExampleActivity;
+import com.example.MarioActivity;
 
 import javax.microedition.khronos.opengles.GL10;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class Texture {
     public int width;
     public int height;
     
-    public Texture(AnimationExampleActivity glGame, String fileName) {
+    public Texture(MarioActivity glGame, String fileName) {
         this.glGraphics = glGame.getGLGraphics();
         this.fileIO = glGame.getFileIO();
         this.fileName = fileName;
