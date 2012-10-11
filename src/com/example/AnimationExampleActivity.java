@@ -48,6 +48,7 @@ public class AnimationExampleActivity extends Activity implements Game, GLSurfac
         input = new AndroidInput(this, glView, 1, 1);
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "AnimationExampleActivity");
+        glView.setBackgroundColor(65536);
     }
 
     @Override
