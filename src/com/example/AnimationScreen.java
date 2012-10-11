@@ -57,7 +57,7 @@ public class AnimationScreen extends Screen {
 
         batcher.beginBatch(texture);
         TextureRegion keyFrame = walkAnim.getKeyFrame(superMario.walkingTime, Animation.ANIMATION_LOOPING);
-        batcher.drawSprite(superMario.position.x, superMario.position.y, superMario.velocity.x < 0 ? 1 : -1, 1, keyFrame);
+        batcher.drawSprite(superMario.position.x, superMario.position.y, superMario.velocity.x < 0 ? -1 : 1, 1, keyFrame);
         batcher.endBatch();
     }
 
