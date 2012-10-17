@@ -3,8 +3,9 @@ package com.example;
 import com.example.framework.GameObject;
 import com.example.framework.math.Vector2;
 
-import static com.example.AnimationScreen.WORLD_HEIGHT;
-import static com.example.AnimationScreen.WORLD_WIDTH;
+import static com.example.MarioActivity.WORLD_HEIGHT;
+import static com.example.MarioActivity.WORLD_WIDTH;
+
 
 class SuperMario extends GameObject {
     public final Vector2 velocity;
@@ -18,8 +19,8 @@ class SuperMario extends GameObject {
         accel = new Vector2();
 
         this.position.set(WORLD_WIDTH/2, WORLD_HEIGHT/2);
-        this.velocity.set(Math.random() > 0.5f ? -0.5f : 0.5f, 0);
-        this.walkingTime = (float) Math.random() * 10;
+        this.velocity.set(0.5f, 0);
+        this.walkingTime = 12 * 10;
     }
 
     public void update(float deltaTime) {

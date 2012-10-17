@@ -24,18 +24,18 @@ public class Camera2D {
         gl.glViewport(0, 0, glGraphics.getWidth(), glGraphics.getHeight());
         gl.glMatrixMode(GL10.GL_PROJECTION);
         gl.glLoadIdentity();
-        gl.glOrthof(position.x - frustumWidth * zoom / 2,
-                    position.x + frustumWidth * zoom/ 2,
-                    position.y - frustumHeight * zoom / 2,
-                    position.y + frustumHeight * zoom/ 2,
+        gl.glOrthof(position.x - frustumWidth,
+                    position.x + frustumWidth,
+                    position.y - frustumHeight,
+                    position.y + frustumHeight,
                     1, -1);
         gl.glMatrixMode(GL10.GL_MODELVIEW);
         gl.glLoadIdentity();
     }
-    
-    public void touchToWorld(Vector2 touch) {
-        touch.x = (touch.x / (float) glGraphics.getWidth()) * frustumWidth * zoom;
-        touch.y = (1 - touch.y / (float) glGraphics.getHeight()) * frustumHeight * zoom;
-        touch.add(position).sub(frustumWidth * zoom / 2, frustumHeight * zoom / 2);
-    }
+//
+//    public void touchToWorld(Vector2 touch) {
+//        touch.x = (touch.x / (float) glGraphics.getWidth()) * frustumWidth * zoom;
+//        touch.y = (1 - touch.y / (float) glGraphics.getHeight()) * frustumHeight * zoom;
+//        touch.add(position).sub(frustumWidth * zoom / 2, frustumHeight * zoom / 2);
+//    }
 }

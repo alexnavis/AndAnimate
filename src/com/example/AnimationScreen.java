@@ -6,10 +6,6 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class AnimationScreen extends Screen {
 
-
-    static final float WORLD_WIDTH = 4.8f;
-    static final float WORLD_HEIGHT = 3.2f;
-
     GLGraphics glGraphics;
     SuperMario superMario;
     SpriteBatcher batcher;
@@ -17,27 +13,26 @@ public class AnimationScreen extends Screen {
     Texture texture;
     Animation walkAnim;
 
-
     public AnimationScreen(Game game) {
         super(game);
         glGraphics = ((MarioActivity) game).getGLGraphics();
-        superMario = new SuperMario(WORLD_HEIGHT/2, WORLD_WIDTH/2, 1, 1);
+        superMario = new SuperMario(MarioActivity.WORLD_HEIGHT / 2, MarioActivity.WORLD_WIDTH / 2, 1, 1);
         batcher = new SpriteBatcher(glGraphics);
-        camera = new Camera2D(glGraphics, WORLD_WIDTH, WORLD_HEIGHT);
+        camera = new Camera2D(glGraphics, 6, 4);
     }
 
     @Override
     public void resume() {
         texture = new Texture(((MarioActivity) game), "Mario-walk.png");
         walkAnim = new Animation(0.19f,
-                new TextureRegion(texture, 0,        0, 19.75f, 35),
-                new TextureRegion(texture, 19.75f,   0, 19.75f, 35),
-                new TextureRegion(texture, 39.5f,    0, 19.75f, 35),
-                new TextureRegion(texture, 59.25f,   0, 19.75f, 35),
-                new TextureRegion(texture, 79,       0, 19.75f, 35),
-                new TextureRegion(texture, 98.75f,   0, 19.75f, 35),
-                new TextureRegion(texture, 118.5f,   0, 19.75f, 35),
-                new TextureRegion(texture, 138.25f,  0, 19.75f, 35));
+                new TextureRegion(texture, 0, 0, 19.75f, 35),
+                new TextureRegion(texture, 19.75f, 0, 19.75f, 35),
+                new TextureRegion(texture, 39.5f, 0, 19.75f, 35),
+                new TextureRegion(texture, 59.25f, 0, 19.75f, 35),
+                new TextureRegion(texture, 79, 0, 19.75f, 35),
+                new TextureRegion(texture, 98.75f, 0, 19.75f, 35),
+                new TextureRegion(texture, 118.5f, 0, 19.75f, 35),
+                new TextureRegion(texture, 138.25f, 0, 19.75f, 35));
     }
 
     @Override
@@ -68,5 +63,4 @@ public class AnimationScreen extends Screen {
     @Override
     public void dispose() {
     }
-
 }

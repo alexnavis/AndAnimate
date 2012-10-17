@@ -2,9 +2,11 @@ package com.example;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 import com.example.framework.*;
@@ -14,6 +16,8 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class MarioActivity extends Activity implements Game, GLSurfaceView.Renderer {
 
+    static float WORLD_WIDTH = 6;
+    static float WORLD_HEIGHT = 2;
     GLGameState state = GLGameState.Initialized;
     private long startTime = System.nanoTime();
 
@@ -36,6 +40,10 @@ public class MarioActivity extends Activity implements Game, GLSurfaceView.Rende
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -48,7 +56,7 @@ public class MarioActivity extends Activity implements Game, GLSurfaceView.Rende
         input = new AndroidInput(this, glView, 1, 1);
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "MarioActivity");
-        glView.setBackgroundColor(65536);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
     @Override

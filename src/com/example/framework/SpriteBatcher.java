@@ -18,7 +18,7 @@ public class SpriteBatcher {
         int len = indices.length;
         short j = 0;
         for (int i = 0; i < len; i += 6, j += 4) {
-            indices[i + 0] = (short) (j + 0);
+            indices[i] = (short) (j + 0);
             indices[i + 1] = (short) (j + 1);
             indices[i + 2] = (short) (j + 2);
             indices[i + 3] = (short) (j + 2);
